@@ -1,0 +1,104 @@
+<div class='project-register'>
+  <h4 class='md-3'>案件登録</h4>
+  <div class='project-reg_form'>
+    <%= form_with model: @project, local:true do |f| %>
+    <div class='row'>
+      <div class='col-md-3'>
+        <label form='created_at'>作成日時</label>
+        <%= f.text_field :created_at, class:'form_control' %>
+      </div>
+      <div class='col-md-3'>
+        <label form='update_at'>販売日</label>
+        <%= f.text_field :update_at, class:'form_control' %>
+      </div>
+      <div class='col-md-3'>
+        <label form='product_category'>商品カテゴリー</label>
+        <%= f.select :product_category, ["お菓子","アパレル","グッズ","その他"] %>
+      </div>
+      <div class='col-md-3'>
+        <label form='deadline'>期日</label>
+        <%= f.text_field :deadline, class:'form_control' %>
+      </div>
+      <div class='col-md-9'>
+        <label form='title'>案件名</label>
+        <%= f.text_field :title, class:'form_control' %>
+      </div>
+      <div class='col-md-3'>
+        <label form='responsible'>担当者名</label>
+        <%= f.text_field :responsible, class:'form_control' %>
+      </div>
+      <div class='col-md-9'>
+        <label form='client'>クライアント名</label>
+        <%= f.text_field :client, class:'form_control' %>
+      </div>
+      <div class='col-md-3'>
+        <label form='client_representative'>クライアント担当者名</label>
+        <%= f.text_field :client_representative, class:'form_control' %>
+      </div>
+      <div class='col-md-12'>
+        <label form='profit_table_url'>利益算出表URL</label>
+        <%= f.text_field :profit_table_url, class:'form_control' %>
+      </div>
+      <div class='col-md-12'>
+        <label form='design_url'>デザインイメージURL</label>
+        <%= f.text_field :design_url, class:'form_control' %>
+      </div>
+      <div class='row mt-5'>
+        <%=f.submit '画像追加', class:'btn btn-success form-control' %>
+      </div>
+    </div>
+    
+    <h4 class='md-3'>アイテム情報</h4>
+    <%= form.fields_for :items do |item| %>
+    <div class='row'>
+      <div class='col-md-9'>
+        <label form='item_name'>商品名</label>
+        <%= f.text_field :name, class:'form_control' %>
+      </div>
+      <div class='col-md-3'>
+        <label form='quantity'>数量</label>
+        <%= f.text_field :quantity, class:'form_control' %>
+      </div>
+      <div class='col-md-9'>
+        <label form='manufacturer_id'>メーカー名</label>
+        <%= f.text_field :manufacturer_id, class:'form_control' %>
+      </div>
+      <div class='col-md-3'>
+        <label form='number_designs'>デザイン数</label>
+        <%= f.text_field :number_designs, class:'form_control' %>
+      </div>
+      <div class='col-md-3'>
+        <label form='design_up_date'>デザインUP</label>
+        <%= f.text_field :design_up_date, class:'form_control' %>
+      </div>
+      <div class='col-md-3'>
+        <label form='design_submission_date'>入稿</label>
+        <%= f.text_field :design_submission_date, class:'form_control' %>
+      </div>
+      <div class='col-md-3'>
+        <label form='design_proofreading_date'>校正</label>
+        <%= f.text_field :design_proofreading_date, class:'form_control' %>
+      </div>
+      <div class='col-md-3'>
+        <label form='design_finish_date'>校了</label>
+        <%= f.text_field :design_finish_date, class:'form_control' %>
+      </div>
+      <div class='col-md-3'>
+        <label form='delivery_date'>納品日</label>
+        <%= f.text_field :delivery_date, class:'form_control' %>
+      </div>
+      <div class='col-md-9'>
+        <label form='address'>納品場所</label>
+        <%= f.text_field :address, class:'form_control' %>
+      </div>
+      <div class='row mt-5'>
+        <%=f.submit 'ファイル追加', class:'btn btn-success form-control' %>
+      </div>
+    </div>
+    <% end %>
+    <div class='row mt-5'>
+    <%=f.submit '登録', class: 'btn btn-success form-control' %>
+    </div>
+    <% end %>
+  </div>
+</div>

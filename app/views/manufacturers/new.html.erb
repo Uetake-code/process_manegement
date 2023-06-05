@@ -1,0 +1,40 @@
+<div class='manufacturer-register'>
+  <h4 class='md-3'>メーカー登録</h4>
+  <div class='manufacturer-reg_form'>
+    <%= form_with model: @manufacturer, local:true do |f| %>
+    <div class='row'>
+      <div class='col-md-8'>
+        <label form='manufacturerName'>メーカー名</label>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class='col-md-4'>
+        <label form='manufacturerName'>担当者名</label>
+       <%= f.text_field :responsible, class: 'form-control' %>
+      </div>
+      <div class='col-md-12'>
+        <label form='email'>メールアドレス</label>
+        <%= f.text_field :mail, class: 'form-control' %>
+      </div>
+      <div class='col-md-9'>
+        <label form='number'>電話番号</label>
+        <%= f.text_field :nmber, class: 'form-control' %>
+      </div>
+      <div class='col-md-3'>
+        <label form='category'>カテゴリー</label>
+        <%= f.select :category, ["お菓子","アパレル","その他"] %>
+      </div>
+      <div class='col-md-12'>
+        <label form='compatible'>作成可能商品</label>
+        <%= f.text_field :compatible, class: 'form-control' %>
+      </div>
+      <div class='col-md-12'>
+        <label form='remarks'>備考</label>
+        <%= f.text_area :remarks, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='row mt-5'>
+    <%=f.submit '作成', class: 'btn btn-success form-control' %>
+    </div>
+    <% end %>
+  </div>
+</div>

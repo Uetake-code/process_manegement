@@ -1,0 +1,31 @@
+<div class='container px-5 px-sm-0'>
+    <div class="row">
+        <div class="col-md-12 offset-md-1">
+            <h2>メーカーリスト</h2>
+            <table class="table table-howver table-inverse">
+                <thead>
+                    <tr></tr>
+                    <th>メーカー名</th>
+                    <th>担当者名</th>
+                    <th>カテゴリー</th>
+                    <th colspan="2"></th>
+                </thead>
+                <tbody>
+                   <% @manufacturers.each do |manufacturer| %>
+                    <tr>
+                        <th>
+                            <%= manufacturer.name %>
+                        </th>
+                        <th>
+                            <%= manufacturer.responsible %>
+                        </th>
+                        <th>
+                            <%= manufacturer.category %>
+                        </th>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
